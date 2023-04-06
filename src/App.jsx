@@ -1,15 +1,15 @@
 import "App.css";
-import { addPost } from "features/Posts";
+import { addPost, deletePost } from "features/Posts";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  const [name, setName] = useState("")
-  const [content, setContent] = useState("")
+  const [name, setName] = useState("");
+  const [content, setContent] = useState("");
   const postList = useSelector((state) => state.posts.value);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(
@@ -19,7 +19,7 @@ function App() {
         content: content,
       })
     );
-  }
+  };
 
   return (
     <>
@@ -45,7 +45,12 @@ function App() {
             <article key={post.id} className="c-post item">
               <h2 className="title">{post.name}</h2>
               <p className="content">{post.content}</p>
-              <button className="delete">削除</button>
+              <button
+                className="delete"
+                onClick={() => dispatch(deletePost({ id: post.id }))}
+              >
+                削除
+              </button>
             </article>
           ))}
         </div>
