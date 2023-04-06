@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PostsData } from "../DummyData";
+import { PostsData } from "DummyData";
 
 export const postSlice = createSlice({
   name: "posts",
