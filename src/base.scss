@@ -1,0 +1,65 @@
+html {
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-underline-position: under;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-feature-settings: "palt";
+  counter-reset: number 0;
+}
+
+font-size inherit .hidden {
+  overflow: hidden !important;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+p,
+li {
+  line-height: 2;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+address,
+em,
+cite,
+dfn,
+var,
+i {
+  font-style: inherit;
+}
+
+img,
+iframe,
+video,
+audio,
+svg,
+canvas {
+  vertical-align: bottom;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentcolor;
+}
+
+table {
+  border-collapse: collapse;
+}
