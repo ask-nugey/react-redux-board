@@ -5,10 +5,12 @@ import { useSelector } from 'react-redux';
 const PostList = () => {
   const postList = useSelector((state) => state.posts.value);
 
+  const childClassName = "item"
+
   return (
     <div className="c-postList">
       {postList.map((post) => (
-        <Post post={post} />
+        <Post post={post} childClassName={childClassName} />
       ))}
     </div>
   );

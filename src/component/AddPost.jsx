@@ -10,6 +10,8 @@ const AddPost = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    if (name === "" || content === "") return;
+
     dispatch(
       addPost({
         id: uuidv4(),
@@ -17,17 +19,23 @@ const AddPost = () => {
         content: content,
       })
     );
+    setName("")
+    setContent("");
   };
 
   return (
     <div className="c-addPost">
       <input
+        className="name"
         type="text"
+        value={name}
         placeholder="お名前"
         onChange={(e) => setName(e.target.value)}
       />
       <input
+        className="content"
         type="text"
+        value={content}
         placeholder="投稿内容"
         onChange={(e) => setContent(e.target.value)}
       />
